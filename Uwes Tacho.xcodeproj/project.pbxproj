@@ -1,0 +1,614 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C6AAD39C2C0B3E5B009C68BD /* Uwes_TachoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AAD39B2C0B3E5B009C68BD /* Uwes_TachoApp.swift */; };
+		C6AAD39E2C0B3E5B009C68BD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AAD39D2C0B3E5B009C68BD /* ContentView.swift */; };
+		C6AAD3A02C0B3E5C009C68BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6AAD39F2C0B3E5C009C68BD /* Assets.xcassets */; };
+		C6AAD3A42C0B3E5C009C68BD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6AAD3A32C0B3E5C009C68BD /* Preview Assets.xcassets */; };
+		C6AAD3AE2C0B3E5C009C68BD /* Uwes_TachoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AAD3AD2C0B3E5C009C68BD /* Uwes_TachoTests.swift */; };
+		C6AAD3B82C0B3E5C009C68BD /* Uwes_TachoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AAD3B72C0B3E5C009C68BD /* Uwes_TachoUITests.swift */; };
+		C6AAD3BA2C0B3E5C009C68BD /* Uwes_TachoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AAD3B92C0B3E5C009C68BD /* Uwes_TachoUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C6AAD3AA2C0B3E5C009C68BD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C6AAD3902C0B3E5B009C68BD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C6AAD3972C0B3E5B009C68BD;
+			remoteInfo = "Uwes Tacho";
+		};
+		C6AAD3B42C0B3E5C009C68BD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C6AAD3902C0B3E5B009C68BD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C6AAD3972C0B3E5B009C68BD;
+			remoteInfo = "Uwes Tacho";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C6AAD3982C0B3E5B009C68BD /* Uwes Tacho.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Uwes Tacho.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6AAD39B2C0B3E5B009C68BD /* Uwes_TachoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Uwes_TachoApp.swift; sourceTree = "<group>"; };
+		C6AAD39D2C0B3E5B009C68BD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C6AAD39F2C0B3E5C009C68BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C6AAD3A12C0B3E5C009C68BD /* Uwes_Tacho.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Uwes_Tacho.entitlements; sourceTree = "<group>"; };
+		C6AAD3A32C0B3E5C009C68BD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C6AAD3A92C0B3E5C009C68BD /* Uwes TachoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Uwes TachoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6AAD3AD2C0B3E5C009C68BD /* Uwes_TachoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Uwes_TachoTests.swift; sourceTree = "<group>"; };
+		C6AAD3B32C0B3E5C009C68BD /* Uwes TachoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Uwes TachoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6AAD3B72C0B3E5C009C68BD /* Uwes_TachoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Uwes_TachoUITests.swift; sourceTree = "<group>"; };
+		C6AAD3B92C0B3E5C009C68BD /* Uwes_TachoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Uwes_TachoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C6AAD3952C0B3E5B009C68BD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C6AAD3A62C0B3E5C009C68BD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C6AAD3B02C0B3E5C009C68BD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C6AAD38F2C0B3E5B009C68BD = {
+			isa = PBXGroup;
+			children = (
+				C6AAD39A2C0B3E5B009C68BD /* Uwes Tacho */,
+				C6AAD3AC2C0B3E5C009C68BD /* Uwes TachoTests */,
+				C6AAD3B62C0B3E5C009C68BD /* Uwes TachoUITests */,
+				C6AAD3992C0B3E5B009C68BD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C6AAD3992C0B3E5B009C68BD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C6AAD3982C0B3E5B009C68BD /* Uwes Tacho.app */,
+				C6AAD3A92C0B3E5C009C68BD /* Uwes TachoTests.xctest */,
+				C6AAD3B32C0B3E5C009C68BD /* Uwes TachoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C6AAD39A2C0B3E5B009C68BD /* Uwes Tacho */ = {
+			isa = PBXGroup;
+			children = (
+				C6AAD39B2C0B3E5B009C68BD /* Uwes_TachoApp.swift */,
+				C6AAD39D2C0B3E5B009C68BD /* ContentView.swift */,
+				C6AAD39F2C0B3E5C009C68BD /* Assets.xcassets */,
+				C6AAD3A12C0B3E5C009C68BD /* Uwes_Tacho.entitlements */,
+				C6AAD3A22C0B3E5C009C68BD /* Preview Content */,
+			);
+			path = "Uwes Tacho";
+			sourceTree = "<group>";
+		};
+		C6AAD3A22C0B3E5C009C68BD /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				C6AAD3A32C0B3E5C009C68BD /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C6AAD3AC2C0B3E5C009C68BD /* Uwes TachoTests */ = {
+			isa = PBXGroup;
+			children = (
+				C6AAD3AD2C0B3E5C009C68BD /* Uwes_TachoTests.swift */,
+			);
+			path = "Uwes TachoTests";
+			sourceTree = "<group>";
+		};
+		C6AAD3B62C0B3E5C009C68BD /* Uwes TachoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C6AAD3B72C0B3E5C009C68BD /* Uwes_TachoUITests.swift */,
+				C6AAD3B92C0B3E5C009C68BD /* Uwes_TachoUITestsLaunchTests.swift */,
+			);
+			path = "Uwes TachoUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C6AAD3972C0B3E5B009C68BD /* Uwes Tacho */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C6AAD3BD2C0B3E5C009C68BD /* Build configuration list for PBXNativeTarget "Uwes Tacho" */;
+			buildPhases = (
+				C6AAD3942C0B3E5B009C68BD /* Sources */,
+				C6AAD3952C0B3E5B009C68BD /* Frameworks */,
+				C6AAD3962C0B3E5B009C68BD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Uwes Tacho";
+			productName = "Uwes Tacho";
+			productReference = C6AAD3982C0B3E5B009C68BD /* Uwes Tacho.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C6AAD3A82C0B3E5C009C68BD /* Uwes TachoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C6AAD3C02C0B3E5C009C68BD /* Build configuration list for PBXNativeTarget "Uwes TachoTests" */;
+			buildPhases = (
+				C6AAD3A52C0B3E5C009C68BD /* Sources */,
+				C6AAD3A62C0B3E5C009C68BD /* Frameworks */,
+				C6AAD3A72C0B3E5C009C68BD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C6AAD3AB2C0B3E5C009C68BD /* PBXTargetDependency */,
+			);
+			name = "Uwes TachoTests";
+			productName = "Uwes TachoTests";
+			productReference = C6AAD3A92C0B3E5C009C68BD /* Uwes TachoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C6AAD3B22C0B3E5C009C68BD /* Uwes TachoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C6AAD3C32C0B3E5C009C68BD /* Build configuration list for PBXNativeTarget "Uwes TachoUITests" */;
+			buildPhases = (
+				C6AAD3AF2C0B3E5C009C68BD /* Sources */,
+				C6AAD3B02C0B3E5C009C68BD /* Frameworks */,
+				C6AAD3B12C0B3E5C009C68BD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C6AAD3B52C0B3E5C009C68BD /* PBXTargetDependency */,
+			);
+			name = "Uwes TachoUITests";
+			productName = "Uwes TachoUITests";
+			productReference = C6AAD3B32C0B3E5C009C68BD /* Uwes TachoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C6AAD3902C0B3E5B009C68BD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					C6AAD3972C0B3E5B009C68BD = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					C6AAD3A82C0B3E5C009C68BD = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = C6AAD3972C0B3E5B009C68BD;
+					};
+					C6AAD3B22C0B3E5C009C68BD = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = C6AAD3972C0B3E5B009C68BD;
+					};
+				};
+			};
+			buildConfigurationList = C6AAD3932C0B3E5B009C68BD /* Build configuration list for PBXProject "Uwes Tacho" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C6AAD38F2C0B3E5B009C68BD;
+			productRefGroup = C6AAD3992C0B3E5B009C68BD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C6AAD3972C0B3E5B009C68BD /* Uwes Tacho */,
+				C6AAD3A82C0B3E5C009C68BD /* Uwes TachoTests */,
+				C6AAD3B22C0B3E5C009C68BD /* Uwes TachoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C6AAD3962C0B3E5B009C68BD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C6AAD3A42C0B3E5C009C68BD /* Preview Assets.xcassets in Resources */,
+				C6AAD3A02C0B3E5C009C68BD /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C6AAD3A72C0B3E5C009C68BD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C6AAD3B12C0B3E5C009C68BD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C6AAD3942C0B3E5B009C68BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C6AAD39E2C0B3E5B009C68BD /* ContentView.swift in Sources */,
+				C6AAD39C2C0B3E5B009C68BD /* Uwes_TachoApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C6AAD3A52C0B3E5C009C68BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C6AAD3AE2C0B3E5C009C68BD /* Uwes_TachoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C6AAD3AF2C0B3E5C009C68BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C6AAD3BA2C0B3E5C009C68BD /* Uwes_TachoUITestsLaunchTests.swift in Sources */,
+				C6AAD3B82C0B3E5C009C68BD /* Uwes_TachoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C6AAD3AB2C0B3E5C009C68BD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C6AAD3972C0B3E5B009C68BD /* Uwes Tacho */;
+			targetProxy = C6AAD3AA2C0B3E5C009C68BD /* PBXContainerItemProxy */;
+		};
+		C6AAD3B52C0B3E5C009C68BD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C6AAD3972C0B3E5B009C68BD /* Uwes Tacho */;
+			targetProxy = C6AAD3B42C0B3E5C009C68BD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		C6AAD3BB2C0B3E5C009C68BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C6AAD3BC2C0B3E5C009C68BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		C6AAD3BE2C0B3E5C009C68BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Uwes Tacho/Uwes_Tacho.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Uwes Tacho/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "UNPP.Uwes-Tacho";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C6AAD3BF2C0B3E5C009C68BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Uwes Tacho/Uwes_Tacho.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Uwes Tacho/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "UNPP.Uwes-Tacho";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C6AAD3C12C0B3E5C009C68BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "UNPP.Uwes-TachoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Uwes Tacho.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Uwes Tacho";
+			};
+			name = Debug;
+		};
+		C6AAD3C22C0B3E5C009C68BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "UNPP.Uwes-TachoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Uwes Tacho.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Uwes Tacho";
+			};
+			name = Release;
+		};
+		C6AAD3C42C0B3E5C009C68BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "UNPP.Uwes-TachoUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Uwes Tacho";
+			};
+			name = Debug;
+		};
+		C6AAD3C52C0B3E5C009C68BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "UNPP.Uwes-TachoUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Uwes Tacho";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C6AAD3932C0B3E5B009C68BD /* Build configuration list for PBXProject "Uwes Tacho" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C6AAD3BB2C0B3E5C009C68BD /* Debug */,
+				C6AAD3BC2C0B3E5C009C68BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C6AAD3BD2C0B3E5C009C68BD /* Build configuration list for PBXNativeTarget "Uwes Tacho" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C6AAD3BE2C0B3E5C009C68BD /* Debug */,
+				C6AAD3BF2C0B3E5C009C68BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C6AAD3C02C0B3E5C009C68BD /* Build configuration list for PBXNativeTarget "Uwes TachoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C6AAD3C12C0B3E5C009C68BD /* Debug */,
+				C6AAD3C22C0B3E5C009C68BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C6AAD3C32C0B3E5C009C68BD /* Build configuration list for PBXNativeTarget "Uwes TachoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C6AAD3C42C0B3E5C009C68BD /* Debug */,
+				C6AAD3C52C0B3E5C009C68BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C6AAD3902C0B3E5B009C68BD /* Project object */;
+}
