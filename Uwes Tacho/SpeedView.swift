@@ -65,6 +65,7 @@ struct SpeedView: View {
             }
             .unitText()
         }
+        .padding(.horizontal)
     }
     
     func speed(_ unitSpeed: UnitSpeed) -> (speed: String, accuracy: String, unit: String) {

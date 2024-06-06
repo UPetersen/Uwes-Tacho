@@ -14,6 +14,8 @@
 		C6AAD3AE2C0B3E5C009C68BD /* Uwes_TachoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AAD3AD2C0B3E5C009C68BD /* Uwes_TachoTests.swift */; };
 		C6AAD3B82C0B3E5C009C68BD /* Uwes_TachoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AAD3B72C0B3E5C009C68BD /* Uwes_TachoUITests.swift */; };
 		C6AAD3BA2C0B3E5C009C68BD /* Uwes_TachoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AAD3B92C0B3E5C009C68BD /* Uwes_TachoUITestsLaunchTests.swift */; };
+		C6C8B7052C1097F40039E47F /* LocationsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C8B7042C1097F40039E47F /* LocationsHandler.swift */; };
+		C6C8B7072C1098D80039E47F /* SpeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C8B7062C1098D80039E47F /* SpeedView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,8 @@
 		C6AAD3B32C0B3E5C009C68BD /* Uwes TachoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Uwes TachoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6AAD3B72C0B3E5C009C68BD /* Uwes_TachoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Uwes_TachoUITests.swift; sourceTree = "<group>"; };
 		C6AAD3B92C0B3E5C009C68BD /* Uwes_TachoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Uwes_TachoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C6C8B7042C1097F40039E47F /* LocationsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsHandler.swift; sourceTree = "<group>"; };
+		C6C8B7062C1098D80039E47F /* SpeedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeedView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,8 @@
 			isa = PBXGroup;
 			children = (
 				C6AAD39B2C0B3E5B009C68BD /* Uwes_TachoApp.swift */,
+				C6C8B7042C1097F40039E47F /* LocationsHandler.swift */,
+				C6C8B7062C1098D80039E47F /* SpeedView.swift */,
 				C6AAD39D2C0B3E5B009C68BD /* ContentView.swift */,
 				C6AAD39F2C0B3E5C009C68BD /* Assets.xcassets */,
 				C6AAD3A12C0B3E5C009C68BD /* Uwes_Tacho.entitlements */,
@@ -259,7 +265,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6C8B7052C1097F40039E47F /* LocationsHandler.swift in Sources */,
 				C6AAD39E2C0B3E5B009C68BD /* ContentView.swift in Sources */,
+				C6C8B7072C1098D80039E47F /* SpeedView.swift in Sources */,
 				C6AAD39C2C0B3E5B009C68BD /* Uwes_TachoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -422,8 +430,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Uwes Tacho/Preview Content\"";
+				DEVELOPMENT_TEAM = 26F6YWJYL8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Your location is needed to determine the travelling speed of your iPhone.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -458,8 +468,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Uwes Tacho/Preview Content\"";
+				DEVELOPMENT_TEAM = 26F6YWJYL8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Your location is needed to determine the travelling speed of your iPhone.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
