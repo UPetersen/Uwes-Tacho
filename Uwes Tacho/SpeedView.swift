@@ -71,8 +71,7 @@ struct SpeedView: View {
     func speed(_ unitSpeed: UnitSpeed) -> (speed: String, accuracy: String, unit: String) {
         let speed         = Measurement<UnitSpeed>(value: self.location.speed, unit: .metersPerSecond).converted(to: unitSpeed)
         let speedAccuracy = Measurement<UnitSpeed>(value: self.location.speedAccuracy, unit: .metersPerSecond).converted(to: unitSpeed)
-        print("hugo")
-        print("\(speed.value.formatted(.number.precision(.fractionLength(1))))" +  "±\(speedAccuracy.value.formatted(.number.precision(.fractionLength(2))))" + speed.unit.symbol )
+//        print("\(speed.value.formatted(.number.precision(.fractionLength(1))))" +  "±\(speedAccuracy.value.formatted(.number.precision(.fractionLength(2))))" + speed.unit.symbol )
         if location.speedAccuracy >= 0 {
             return ("\(speed.value.formatted(.number.precision(.fractionLength(1))))",
                     "±\(speedAccuracy.value.formatted(.number.precision(.fractionLength(2))))",

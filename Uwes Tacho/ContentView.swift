@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UIKit
 import os
 
 struct ContentView: View {
@@ -87,12 +88,16 @@ struct ContentView: View {
         }
         .onAppear() {
             locationsHandler.startLocationUpdates()
+            UIApplication.shared.isIdleTimerDisabled = true // App stays open like navigation apps
         }
         .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
             guard let scene = (UIApplication.shared.connectedScenes.first as? UIWindowScene) else { return }
             self.isLandscape = scene.interfaceOrientation.isLandscape
         }
-
+        .onDisappear()  {
+            UIApplication.shared.isIdleTimerDisabled = false
+            print("In .onDisappear.")
+        }
     }
     
     /// Animates the change of the main speed unit like a flipping card
