@@ -13,7 +13,7 @@ struct ContentView: View {
     
     let animationDuration: Double = 0.5
     
-    @State var logger = Logger(subsystem: "com.apple.liveUpdatesSample", category: "DemoView")
+    @State var logger = Logger(subsystem: "com.apple.Uwes-tacho", category: "DemoView")
     @StateObject var locationsHandler = LocationsHandler.shared
     @State private var isLandscape = false
     @State private var mainUnitSpeed: UnitSpeed = UnitSpeed(forLocale: Locale.current)
