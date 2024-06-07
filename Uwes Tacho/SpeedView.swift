@@ -20,13 +20,6 @@ struct LargeText: ViewModifier {
     }
 }
 
-extension View {
-    func largeText() -> some View {
-        modifier(LargeText())
-    }
-}
-
-
 struct UnitText: ViewModifier {
     @State private var isLandscape = false
 
@@ -47,6 +40,13 @@ extension View {
         modifier(UnitText())
     }
 }
+extension View {
+    func largeText() -> some View {
+        modifier(LargeText())
+    }
+}
+
+
 
 
 struct SpeedView: View {
