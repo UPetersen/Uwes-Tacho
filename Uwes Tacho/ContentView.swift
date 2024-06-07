@@ -106,7 +106,7 @@ struct ContentView: View {
         }
         // now quickly flip from 90 to 270 degrees, such that this transition is not visible.
         // At the same instant the value is changed (happens separately in separate code)
-        withAnimation(.easeInOut(duration: 0.001).delay(animationDuration)) {
+        withAnimation(.easeInOut(duration: 0.00000001).delay(animationDuration)) {
             rotationAngle = 270
         }
         // and finally rotate back in from 270 degrees, such that rotation direction is continued
