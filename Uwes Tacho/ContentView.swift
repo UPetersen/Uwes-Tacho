@@ -19,7 +19,7 @@ struct ContentView: View {
     @State private var mainUnitSpeed: UnitSpeed = UnitSpeed(forLocale: Locale.current)
     @State private var rotationAngle: Double = 0
     @State private var useAnimation: Bool = false
-    
+//
     var body: some View {
         VStack {
 
@@ -95,6 +95,7 @@ struct ContentView: View {
             self.isLandscape = scene.interfaceOrientation.isLandscape
         }
         .onDisappear()  {
+            locationsHandler.stopLocationUpdates()
             UIApplication.shared.isIdleTimerDisabled = false
             print("In .onDisappear.")
         }
