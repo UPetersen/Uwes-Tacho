@@ -33,5 +33,5 @@ Für die Richtigkeit der angezeigten Informationen wird keinerlei Haftung oder G
 
 # Lizenz
 
-GNU GENERAL PUBLIC LICENSE [Version 3](https://github.com/UPetersen/Unfalldatenatlas/blob/main/LICENSE).
+GNU GENERAL PUBLIC LICENSE [Version 3](https://github.com/UPetersen/Uwes-Tacho/blob/main/LICENSE).
 
