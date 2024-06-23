@@ -13,12 +13,15 @@ struct ContentView: View {
     
     let animationDuration: Double = 0.5
     
-    @State var logger = Logger(subsystem: "com.apple.Uwes-tacho", category: "DemoView")
+//    @State var logger = Logger(subsystem: "com.UNPP.Uwes-tacho", category: "ContentView")
     @StateObject var locationsHandler = LocationsHandler.shared
     @State private var isLandscape = false
     @State private var mainUnitSpeed: UnitSpeed = UnitSpeed(forLocale: Locale.current)
-    @State private var rotationAngle: Double = 0
+    @State private var rotationAngleForAnimation: Double = 0
     @State private var useAnimation: Bool = false
+    @State private var badGPSSignal: Bool = false
+    @State private var startDate: Date = Date.now
+    let timer = Timer.publish(every: 0.5, on: .main, in: .common).autoconnect()
 //
     var body: some View {
         VStack {
@@ -32,7 +35,7 @@ struct ContentView: View {
             Group { // Views with the speed values
                 
                 SpeedView(unitSpeed: mainUnitSpeed, location: locationsHandler.lastLocation)
-                    .rotation3DEffect(Angle(degrees: rotationAngle), axis: /*@START_MENU_TOKEN@*/(x: 0.0, y: 1.0, z: 0.0)/*@END_MENU_TOKEN@*/ )
+                    .rotation3DEffect(Angle(degrees: rotationAngleForAnimation), axis: /*@START_MENU_TOKEN@*/(x: 0.0, y: 1.0, z: 0.0)/*@END_MENU_TOKEN@*/ )
                     .animation(.linear(duration: 0.1).delay(animationDuration), value: useAnimation) // change value while at 90 degrees and thus not visible
 
                 Divider()
@@ -69,7 +72,7 @@ struct ContentView: View {
             
             HStack() {
 
-                Text("Count: \(self.locationsHandler.count)")
+                Text("Zähler: \(self.locationsHandler.count)")
                     .padding(.horizontal)
 
                 Spacer()
@@ -81,15 +84,21 @@ struct ContentView: View {
 
                 Spacer()
 
-                Text("Count: \(self.locationsHandler.count)") // same text, but hidden, for symmetry
+//                Text(locationsHandler.lastLocation.timestamp.formatted(date: .omitted, time: .standard))
+//                    .padding(.horizontal)
+                // For symmetry: same text on the right side as on the left side, but hidden (to retain symmetry, i.e. the button in the middle)
+                Text("Zähler: \(self.locationsHandler.count)")
                     .padding(.horizontal)
                     .hidden()
             }
         }
         .onAppear() {
             locationsHandler.startLocationUpdates()
-            UIApplication.shared.isIdleTimerDisabled = true // App stays open like navigation apps
+            UIApplication.shared.isIdleTimerDisabled = true // App stays open, just like navigation apps do
+            startDate = Date.now
+            print("Start Date: \(startDate)")
         }
+        // react on change of orientation (portrait/landscape)
         .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
             guard let scene = (UIApplication.shared.connectedScenes.first as? UIWindowScene) else { return }
             self.isLandscape = scene.interfaceOrientation.isLandscape
@@ -99,6 +108,34 @@ struct ContentView: View {
             UIApplication.shared.isIdleTimerDisabled = false
             print("In .onDisappear.")
         }
+        // Show alert when bad GPS Signal, but do not show within the first four seconds after starting of the app
+        // Remark: in case, that the app starts with a bad signal, this .onReceive gets never called. Fort these cases
+        // there a timer is used additionally, that fires after four seconds to assess the state and show the respective
+        // bad GPS signal alert.
+        .onChange(of: locationsHandler.lastLocation.speedAccuracy, initial: false) { oldValue, newValue in
+            print("Distance to inital date: \(startDate.distance(to: Date.now))")
+            if startDate.distance(to: Date.now) >= 4.0 && newValue < 0 {
+                badGPSSignal = true // show bad gps information only after first two seconds
+            } else {
+                badGPSSignal = false
+            }
+        }
+        // Timer that fires four seconds after app start and shows the bad GPS alert if necessary.
+        // The timer is disable thereafter.
+        .onReceive(timer) { fireDate in
+            print("\(fireDate), elapsed time: \(fireDate.timeIntervalSince(startDate))")
+            let elapsedTime = fireDate.timeIntervalSince(startDate)
+            if elapsedTime >= 4 {
+                timer.upstream.connect().cancel()
+                if locationsHandler.lastLocation.speedAccuracy < 0 {
+                    badGPSSignal = true
+                }
+            }
+        }
+        .alert(isPresented: $badGPSSignal) {
+            Alert(title: Text("Kein ausreichender GPS-Empfang"))
+        }
+
     }
     
     /// Animates the change of the main speed unit like a flipping card
@@ -108,16 +145,16 @@ struct ContentView: View {
         useAnimation.toggle()
         // rotate away (i.e. to 90 degrees)
         withAnimation(.easeInOut(duration: animationDuration)) {
-            rotationAngle += 90
+            rotationAngleForAnimation += 90
         }
         // now quickly flip from 90 to 270 degrees, such that this transition is not visible.
         // At the same instant the value is changed (happens separately in separate code)
         withAnimation(.easeInOut(duration: 0.00000001).delay(animationDuration)) {
-            rotationAngle = 270
+            rotationAngleForAnimation = 270
         }
         // and finally rotate back in from 270 degrees, such that rotation direction is continued
         withAnimation(.easeInOut(duration: animationDuration).delay(animationDuration)) {
-            rotationAngle += 90
+            rotationAngleForAnimation += 90
         }
     }
 }

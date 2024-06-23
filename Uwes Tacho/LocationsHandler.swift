@@ -13,7 +13,7 @@ import os
 import CoreLocation
 
 @MainActor class LocationsHandler: ObservableObject {
-    let logger = Logger(subsystem: "com.apple.Uwes-Tacho", category: "LocationsHandler")
+    let logger = Logger(subsystem: "com.UNPP.Uwes-Tacho", category: "LocationsHandler")
     
     static let shared = LocationsHandler()  // Create a single, shared instance of the object.
 
@@ -45,7 +45,8 @@ import CoreLocation
         if self.manager.authorizationStatus == .notDetermined {
             self.manager.requestWhenInUseAuthorization()
         }
-        self.logger.info("Starting location updates")
+//        self.logger.info("Starting location updates")
+        print("Starting location updates")
         Task() {
             do {
                 self.updatesStarted = true
@@ -60,14 +61,16 @@ import CoreLocation
                     }
                 }
             } catch {
-                self.logger.error("Could not start location updates")
+//                self.logger.error("Could not start location updates")
+                print("Could not start location updates")
             }
             return
         }
     }
     
     func stopLocationUpdates() {
-        self.logger.info("Stopping location updates")
+//        self.logger.info("Stopping location updates")
+        print("Stopping location updates")
         self.updatesStarted = false
     }
 }
