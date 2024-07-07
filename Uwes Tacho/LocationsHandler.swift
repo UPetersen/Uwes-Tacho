@@ -13,7 +13,7 @@ import os
 import CoreLocation
 
 @MainActor class LocationsHandler: ObservableObject {
-    let logger = Logger(subsystem: "com.UNPP.Uwes-Tacho", category: "LocationsHandler")
+//    let logger = Logger(subsystem: "com.UNPP.Uwes-Tacho", category: "LocationsHandler")
     
     static let shared = LocationsHandler()  // Create a single, shared instance of the object.
 

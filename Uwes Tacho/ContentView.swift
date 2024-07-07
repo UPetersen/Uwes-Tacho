@@ -14,7 +14,6 @@ struct ContentView: View {
     
     let animationDuration: Double = 0.5
     
-//    @State var logger = Logger(subsystem: "com.UNPP.Uwes-tacho", category: "ContentView")
     @StateObject var locationsHandler = LocationsHandler.shared
     @State private var isLandscape = false
     @State private var mainUnitSpeed: UnitSpeed = UnitSpeed(forLocale: Locale.current)
@@ -26,22 +25,23 @@ struct ContentView: View {
 //
 
     func ratioLengthToMaxNumber(location: CLLocation, unit: UnitSpeed) -> Double {
-        let speedInKmh         = Measurement<UnitSpeed>(value: location.speed, unit: .metersPerSecond).converted(to: .kilometersPerHour).value
-        let speed         = Measurement<UnitSpeed>(value: location.speed, unit: .metersPerSecond).converted(to: unit).value
+        let speedInKmh = Measurement<UnitSpeed>(value: location.speed, unit: .metersPerSecond).converted(to: .kilometersPerHour).value
+        let speed      = Measurement<UnitSpeed>(value: location.speed, unit: .metersPerSecond).converted(to: unit).value
                 
         let digits    = String(speed.formatted(.number.precision(.fractionLength(0)))).count
         let digitsKmh = String(speedInKmh.formatted(.number.precision(.fractionLength(0)))).count
         
-        // Example: 36.0 m/s vs 115.2 km/h (which ist the number with the greates possible length).
-        // Assume the length of the decimal point in the font is 0.8 relative to the length of the numbers in this font, then
-        // Ratio of the lengthes (the scale factor) is: (2 + 0,8 + 1) / (3 + 0.8 + 1)
-        let relativeLengtOfDecimalPoint = 0.8
-        let ratio = (Double(digits) + 1.0 + relativeLengtOfDecimalPoint) / (Double(digitsKmh) + 1.0 + relativeLengtOfDecimalPoint) // with one fraction digit
+        // Example: 36.0 m/s vs 115.2 km/h (which ist the number with the greatest possible length).
+        // Assume the width of the decimal point (or comma) in the font is 0.8 relative to the width of the numbers in this font, then
+        // Ratio of the widths (the scale factor) is: (2 + 0,8 + 1) / (3 + 0.8 + 1)
+        let relativewidthOfDecimalPoint = 0.2 // (assuemd) width of the decimal point (or comma) compared to with of a digit of the monospaced font.
+        let ratio = (Double(digits) + 1.0 + relativewidthOfDecimalPoint) / (Double(digitsKmh) + 1.0 + relativewidthOfDecimalPoint) * 0.9 // with one fraction digit
 
-        print("Geschwindigkeit in km/h: \(speedInKmh), digits: \(digitsKmh), in Einheit \(speed), digits: \(digits), scale: \(ratio).")
+        print("Geschwindigkeit in km/h: \(speedInKmh), digits: \(digitsKmh), in Einheit \(speed), digits: \(digits), ratio: \(ratio).")
 
         return ratio
     }
+    
     var body: some View {
         VStack {
 
@@ -54,10 +54,9 @@ struct ContentView: View {
             SpeedView(unitSpeed: mainUnitSpeed, location: locationsHandler.lastLocation)
                 .rotation3DEffect(Angle(degrees: rotationAngleForAnimation), axis: /*@START_MENU_TOKEN@*/(x: 0.0, y: 1.0, z: 0.0)/*@END_MENU_TOKEN@*/ )
                 .animation(.linear(duration: 0.1).delay(animationDuration), value: useAnimation) // change value while at 90 degrees and thus not visible
+                .foregroundColor(locationsHandler.updatesStarted ? .primary : .secondary) //gray out speed values, when not updating.
 
-            Divider()
-            
-            
+
             GeometryReader() { geo in
                 
                 if self.isLandscape {
@@ -65,85 +64,49 @@ struct ContentView: View {
                     Grid() {
                         Divider()
                         GridRow() {
-                            SpeedView(unitSpeed: .kilometersPerHour, location: locationsHandler.lastLocation)
-                                .frame(width: geo.size.width / 4 , 
-                                       height: geo.size.height / 1)
-                                .onTapGesture {  changeMainUnitSpeedAnimated(.kilometersPerHour) }
-                            SpeedView(unitSpeed: .milesPerHour, location: locationsHandler.lastLocation)
-                                .frame(width: geo.size.width / 4 * ratioLengthToMaxNumber(location: locationsHandler.lastLocation, unit: .milesPerHour), 
-                                       height: geo.size.height / 1)
+
+                            SpeedView2(unitSpeed: .kilometersPerHour, location: locationsHandler.lastLocation, ratio: ratioLengthToMaxNumber(location: locationsHandler.lastLocation, unit: .kilometersPerHour))
+                                .frame(width: geo.size.width / 4, height: geo.size.height)
+                                .onTapGesture { changeMainUnitSpeedAnimated(.kilometersPerHour) }
+                            SpeedView2(unitSpeed: .milesPerHour, location: locationsHandler.lastLocation, ratio: ratioLengthToMaxNumber(location: locationsHandler.lastLocation, unit: .milesPerHour))
+                                .frame(width: geo.size.width / 4, height: geo.size.height)
                                 .onTapGesture { changeMainUnitSpeedAnimated(.milesPerHour) }
-                            SpeedView(unitSpeed: .knots, location: locationsHandler.lastLocation)
-                                .frame(width: geo.size.width / 4 * ratioLengthToMaxNumber(location: locationsHandler.lastLocation, unit: .metersPerSecond), 
-                                       height: geo.size.height / 1)
-                                .onTapGesture {  changeMainUnitSpeedAnimated(.knots) }
-                            SpeedView(unitSpeed: .metersPerSecond, location: locationsHandler.lastLocation)
-                                .frame(width: geo.size.width / 4 * ratioLengthToMaxNumber(location: locationsHandler.lastLocation, unit: .metersPerSecond), 
-                                       height: geo.size.height / 1)
-                                .onTapGesture {  changeMainUnitSpeedAnimated(.metersPerSecond) }
+                            SpeedView2(unitSpeed: .knots, location: locationsHandler.lastLocation, ratio: ratioLengthToMaxNumber(location: locationsHandler.lastLocation, unit: .knots))
+                                .frame(width: geo.size.width / 4, height: geo.size.height)
+                                .onTapGesture { changeMainUnitSpeedAnimated(.knots) }
+                            SpeedView2(unitSpeed: .metersPerSecond, location: locationsHandler.lastLocation, ratio: ratioLengthToMaxNumber(location: locationsHandler.lastLocation, unit: .metersPerSecond))
+                                .frame(width: geo.size.width / 4, height: geo.size.height)
+                                .onTapGesture { changeMainUnitSpeedAnimated(.metersPerSecond) }
                         }
                     }
+//                    .frame(width: geo.size.width, height: geo.size.height)
+
                 } else {
                     Grid() {
                         Divider()
+                        Spacer()
+
                         GridRow() {
-                            SpeedView(unitSpeed: .kilometersPerHour, location: locationsHandler.lastLocation)
-                                .frame(width: geo.size.width / 2 , 
-                                       height: geo.size.height / 2)
-                                .onTapGesture {  changeMainUnitSpeedAnimated(.kilometersPerHour) }
-                            SpeedView(unitSpeed: .milesPerHour, location: locationsHandler.lastLocation)
-                                .frame(width: geo.size.width / 2 * ratioLengthToMaxNumber(location: locationsHandler.lastLocation, unit: .milesPerHour), 
-                                       height: geo.size.height / 2)
+                            SpeedView2(unitSpeed: .kilometersPerHour, location: locationsHandler.lastLocation, ratio: ratioLengthToMaxNumber(location: locationsHandler.lastLocation, unit: .kilometersPerHour))
+                                .frame(width: geo.size.width / 2, height: geo.size.height * 0.4)
+                                .onTapGesture { changeMainUnitSpeedAnimated(.kilometersPerHour) }
+                            SpeedView2(unitSpeed: .milesPerHour, location: locationsHandler.lastLocation, ratio: ratioLengthToMaxNumber(location: locationsHandler.lastLocation, unit: .milesPerHour))
+                                .frame(width: geo.size.width / 2, height: geo.size.height * 0.4)
                                 .onTapGesture { changeMainUnitSpeedAnimated(.milesPerHour) }
                         }
                         GridRow() {
-                            SpeedView(unitSpeed: .knots, location: locationsHandler.lastLocation)
-                                .frame(width: geo.size.width / 2 * ratioLengthToMaxNumber(location: locationsHandler.lastLocation, unit: .metersPerSecond), 
-                                       height: geo.size.height / 2)
-                                .onTapGesture {  changeMainUnitSpeedAnimated(.knots) }
-                            SpeedView(unitSpeed: .metersPerSecond, location: locationsHandler.lastLocation)
-                                .frame(width: geo.size.width / 2 * ratioLengthToMaxNumber(location: locationsHandler.lastLocation, unit: .metersPerSecond), 
-                                       height: geo.size.height / 2)
-                                .onTapGesture {  changeMainUnitSpeedAnimated(.metersPerSecond) }
+                            SpeedView2(unitSpeed: .knots, location: locationsHandler.lastLocation, ratio: ratioLengthToMaxNumber(location: locationsHandler.lastLocation, unit: .knots))
+                                .frame(width: geo.size.width / 2, height: geo.size.height * 0.4)
+                                .onTapGesture { changeMainUnitSpeedAnimated(.knots) }
+                            SpeedView2(unitSpeed: .metersPerSecond, location: locationsHandler.lastLocation, ratio: ratioLengthToMaxNumber(location: locationsHandler.lastLocation, unit: .metersPerSecond))
+                                .frame(width: geo.size.width / 2, height: geo.size.height * 0.4)
+                                .onTapGesture { changeMainUnitSpeedAnimated(.metersPerSecond) }
                         }
+                        Spacer()
                     }
+//                    .frame(width: geo.size.width, height: geo.size.height)
                 }
-
-
             }
-//            Group { // Views with the speed values
-//                
-//                SpeedView(unitSpeed: mainUnitSpeed, location: locationsHandler.lastLocation)
-//                    .rotation3DEffect(Angle(degrees: rotationAngleForAnimation), axis: /*@START_MENU_TOKEN@*/(x: 0.0, y: 1.0, z: 0.0)/*@END_MENU_TOKEN@*/ )
-//                    .animation(.linear(duration: 0.1).delay(animationDuration), value: useAnimation) // change value while at 90 degrees and thus not visible
-//
-//                Divider()
-//                
-//                if !self.isLandscape {
-//                    HStack() {
-//                        SpeedView(unitSpeed: .kilometersPerHour, location: locationsHandler.lastLocation)
-//                            .onTapGesture {  changeMainUnitSpeedAnimated(.kilometersPerHour) }
-//                        SpeedView(unitSpeed: .milesPerHour, location: locationsHandler.lastLocation)
-//                            .onTapGesture { changeMainUnitSpeedAnimated(.milesPerHour) }
-//                    }
-//                }
-//                
-//                Spacer()
-//
-//                HStack() {
-//                    if self.isLandscape {
-//                        SpeedView(unitSpeed: .kilometersPerHour, location: locationsHandler.lastLocation)
-//                            .onTapGesture {  changeMainUnitSpeedAnimated(.kilometersPerHour) }
-//                        SpeedView(unitSpeed: .milesPerHour, location: locationsHandler.lastLocation)
-//                            .onTapGesture {  changeMainUnitSpeedAnimated(.milesPerHour) }
-//                    }
-//                    SpeedView(unitSpeed: .knots, location: locationsHandler.lastLocation)
-//                        .onTapGesture {  changeMainUnitSpeedAnimated(.knots) }
-//                    SpeedView(unitSpeed: .metersPerSecond, location: locationsHandler.lastLocation)
-//                        .onTapGesture {  changeMainUnitSpeedAnimated(.metersPerSecond) }
-//                }
-//
-//            }
             .foregroundColor(locationsHandler.updatesStarted ? .primary : .secondary) //gray out speed values, when not updating.
 
             Divider()
@@ -151,7 +114,7 @@ struct ContentView: View {
             
             HStack() {
 
-                Text("Zähler: \(self.locationsHandler.count)")
+                Text("# \(self.locationsHandler.count)")
                     .padding(.horizontal)
 
                 Spacer()
@@ -166,7 +129,7 @@ struct ContentView: View {
 //                Text(locationsHandler.lastLocation.timestamp.formatted(date: .omitted, time: .standard))
 //                    .padding(.horizontal)
                 // For symmetry: same text on the right side as on the left side, but hidden (to retain symmetry, i.e. the button in the middle)
-                Text("Zähler: \(self.locationsHandler.count)")
+                Text("# \(self.locationsHandler.count)")
                     .padding(.horizontal)
                     .hidden()
             }
@@ -189,7 +152,7 @@ struct ContentView: View {
         }
         // Show alert when bad GPS Signal, but do not show within the first four seconds after starting of the app
         // Remark: in case, that the app starts with a bad signal, this .onReceive gets never called. Fort these cases
-        // there a timer is used additionally, that fires after four seconds to assess the state and show the respective
+        // a timer is used additionally, that fires after four seconds to assess the state and show the respective
         // bad GPS signal alert.
         .onChange(of: locationsHandler.lastLocation.speedAccuracy, initial: false) { oldValue, newValue in
             print("Distance to inital date: \(startDate.distance(to: Date.now))")
