@@ -49,6 +49,7 @@
 		C6AAD3B92C0B3E5C009C68BD /* Uwes_TachoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Uwes_TachoUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C6C8B7042C1097F40039E47F /* LocationsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsHandler.swift; sourceTree = "<group>"; };
 		C6C8B7062C1098D80039E47F /* SpeedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeedView.swift; sourceTree = "<group>"; };
+		C6CCDEBE2C3AA78000FD01BB /* Uwes-Tacho-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Uwes-Tacho-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +100,7 @@
 		C6AAD39A2C0B3E5B009C68BD /* Uwes Tacho */ = {
 			isa = PBXGroup;
 			children = (
+				C6CCDEBE2C3AA78000FD01BB /* Uwes-Tacho-Info.plist */,
 				C6AAD39B2C0B3E5B009C68BD /* Uwes_TachoApp.swift */,
 				C6C8B7042C1097F40039E47F /* LocationsHandler.swift */,
 				C6C8B7062C1098D80039E47F /* SpeedView.swift */,
@@ -433,6 +435,8 @@
 				DEVELOPMENT_TEAM = 26F6YWJYL8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Uwes-Tacho-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Your location is needed to determine the travelling speed of your iPhone.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -472,6 +476,8 @@
 				DEVELOPMENT_TEAM = 26F6YWJYL8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Uwes-Tacho-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Your location is needed to determine the travelling speed of your iPhone.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
